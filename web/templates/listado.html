@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Listado de Ventas</title>
+    {% include 'head.html' %}
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <h1>Listado de ventas</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Local</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Monto</th>
+                <th scope="col">Cantidad</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for venta in ventas %}
+            <tr>
+                <td>{{venta.local_id}}</td>
+                <td>{{venta.venta_fecha}}</td>
+                <td>{{venta.venta_monto}}</td>
+                <td>{{venta.venta_cantidad}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {% include 'footer.html' %}
+</body>
